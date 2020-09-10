@@ -56,6 +56,8 @@ export function TodoProvider({ children }) {
   );
 }
 
+// 매번 useContext를 쓰지 않기 위해 custom hook 구현
+
 export function useTodoState() {
   const context = useContext(TodoStateContext);
   if (!context) {
@@ -72,7 +74,7 @@ export function useTodoDispatch() {
   return context;
 }
 
-export function useTodoNextIdContext() {
+export function useTodoNextId() {
   const context = useContext(TodoNextIdContext);
   if (!context) {
     throw new Error("Cannot find TodoProvider");
